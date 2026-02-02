@@ -1,0 +1,36 @@
+name: UI Automation CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Start static web server
+        run: |
+          python3 -m http.server 8000 &
+        shell: bash
+
+      - name: Run UI tests
+        run: mvn test -Dcucumber.filter.tags="not @negative" -DbaseUrl=http://localhost:8000/GaviHugeFan/index.html
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-html-report
+          path: target/html-report
