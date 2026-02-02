@@ -1,0 +1,14 @@
+pages\BasePage.class
+utils\DriverFactory.class
+pages\HomePage.class
+runners\TestRunner.class
+pages\EditsPage.class
+stepdefinitions\HomepageSteps.class
+pages\TrainingsPage.class
+utils\WaitUtils.class
+utils\ReportGenerator.class
+pages\NewsPage.class
+pages\MatchesPage.class
+hooks\Hooks.class
+pages\GaviPage.class
+stepdefinitions\NavigationSteps.class
