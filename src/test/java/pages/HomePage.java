@@ -4,11 +4,8 @@ import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {
 
-    private static final String BASE_URL =
-        System.getProperty(
-                "baseUrl",
-                "http://127.0.0.1:5500/GaviHugeFan/index.html"
-        );
+   private static final String BASE_URL = 
+    System.getProperty("baseUrl", "http://localhost:8000/");
 
     private By welcomeText = By.className("welcome");
     private By newsLink = By.id("nav-news");

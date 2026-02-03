@@ -23,11 +23,11 @@ jobs:
       - name: Start static web server
         run: |
           cd GaviHugeFan
-          nohup python3 -m http.server 8000 > server.log 2>&1 &
-          sleep 3
+          nohup python3 -m http.server 8000 --bind 0.0.0.0 > ../server.log 2>&1 &
+          sleep 5
 
       - name: Run UI tests
-        run: mvn test -DbaseUrl=http://localhost:8000/index.html
+        run: mvn test -DbaseUrl=http://localhost:8000/
 
       - name: Upload HTML report
         if: always()
