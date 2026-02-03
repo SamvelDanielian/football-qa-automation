@@ -22,10 +22,12 @@ jobs:
 
       - name: Start static web server
         run: |
-          nohup python3 -m http.server 8000 > server.log 2>&1 &
-          sleep 3
-        working-directory: .
-        shell: bash
+          python3 -m http.server 8000 > server.log 2>&1 &
+          for i in {1..10}; do
+            curl -s http://localhost:8000/GaviHugeFan/index.html && break
+            echo "Waiting for server..."
+            sleep 2
+          done
 
       - name: Run UI tests
         run: mvn test -DbaseUrl=http://localhost:8000/GaviHugeFan/index.html
@@ -36,3 +38,7 @@ jobs:
         with:
           name: cucumber-html-report
           path: target/html-report
+
+      - name: Show server log
+        if: failure()
+        run: cat server.log    
