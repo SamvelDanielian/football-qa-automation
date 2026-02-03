@@ -14,11 +14,12 @@ public class DriverFactory {
             boolean isCI = "true".equalsIgnoreCase(System.getenv("CI"));
 
             if (isCI) {
-                options.addArguments("--headless=new");
+                options.addArguments("--headless");
                 options.addArguments("--no-sandbox");
                 options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--disable-gpu");
+                //options.addArguments("--disable-gpu");
                 options.addArguments("--window-size=1920,1080");
+                options.addArguments("--remote-allow-origins=*");
             }
             driver = new ChromeDriver(options);
         }
