@@ -23,8 +23,8 @@ jobs:
       - name: Start static web server
         run: |
           cd GaviHugeFan
-          python3 -m http.server 8000 > ../server.log 2>&1 &
-          sleep 5
+          nohup python3 -m http.server 8000 > server.log 2>&1 &
+          sleep 3
 
       - name: Run UI tests
         run: mvn test -DbaseUrl=http://localhost:8000/index.html
