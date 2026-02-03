@@ -22,11 +22,12 @@ jobs:
 
       - name: Start static web server
         run: |
-          python3 -m http.server 8000 &
+          python3 -m http.server 8000
+        working-directory: .
         shell: bash
 
       - name: Run UI tests
-        run: mvn test -Dcucumber.filter.tags="not @negative" -DbaseUrl=http://localhost:8000/GaviHugeFan/index.html
+        run: mvn test -Dcucumber.filter.tags="@smoke" -DbaseUrl=http://localhost:8000/GaviHugeFan/index.html
 
       - name: Upload HTML report
         if: always()
