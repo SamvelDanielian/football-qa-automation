@@ -65,10 +65,6 @@ A **GitHub Actions** CI workflow is configured to:
 * **Selenium Wait Strategies:** Managing synchronization to ensure test stability and reduce flakiness.
 * **CI/CD Integration:** Learning to automate the testing lifecycle via GitHub Actions.
 
----
-
-## 👤 Author
-**Sam** *Junior QA Automation Engineer*
 
 ## 👤 Author
 **Sam Danielyan** *Junior QA Automation Engineer*  
