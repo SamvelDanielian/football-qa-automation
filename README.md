@@ -1,7 +1,9 @@
 # UI Automation Testing – Football Website
 
 ## 📌 Project Overview
-This project is a **UI test automation framework** built to validate the core functionality and navigation of a football-themed web application. 
+This project is a **UI test automation framework** built to validate the core functionality and navigation of a football-themed web application. Project is in progress now.
+
+> **Note:** The target application being tested is a personal project which can be found in its separate repository here: [Gavi Huge Fan Website](https://github.com/SamvelDanielian/gavi-huge-fan).
 
 The framework follows **QA best practices** to ensure maintainability and readability:
 * **Page Object Model (POM):** Enhances test maintenance and reduces code duplication.
@@ -34,8 +36,8 @@ The automation suite currently validates the following areas:
 * **News Page:** Verification of navigation and header.
 * **Matches Page:** Validation of match listings.
 * **Trainings Page:** Check for training content.
-* **Player Pages:** Specific navigation to the Gavi page.
-* **Media:** Navigation to the Edits page.
+* **Player Page:** Specific navigation to the Gavi page.
+* **Edits Page:** Navigation to the Edits page.
 
 ## 📊 Reports
 After test execution, **Cucumber HTML reports** are generated automatically inside the project under the `target/html-report` directory. 
@@ -55,7 +57,8 @@ A **GitHub Actions** CI workflow is configured to:
 
 > **Note:** CI execution is currently under refinement due to environment-related constraints (specifically headless browser configuration and static server timing). Local execution currently remains the most reliable method for full test results.
 >
-> ## 🎯 Key Learning Outcomes
+
+## 🎯 Key Learning Outcomes
 * **Designing Scalable Frameworks:** Implementing a structure that grows with the application.
 * **Page Object Model (POM):** Reducing maintenance by separating page-specific elements from test logic.
 * **Behavior Driven Development (BDD):** Writing clear, human-readable scenarios using Gherkin.
@@ -63,6 +66,9 @@ A **GitHub Actions** CI workflow is configured to:
 * **CI/CD Integration:** Learning to automate the testing lifecycle via GitHub Actions.
 
 ---
+
+## 👤 Author
+**Sam** *Junior QA Automation Engineer*
 
 ## 👤 Author
 **Sam Danielyan** *Junior QA Automation Engineer*  
